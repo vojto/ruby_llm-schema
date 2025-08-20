@@ -36,6 +36,10 @@ module RubyLLM
       def object(...)
         @schemas << Schema.build_property_schema(:object, ...)
       end
+
+      def any_of(**options, &block)
+        @schemas << Schema.build_property_schema(:any_of, **options, &block)
+      end
     end
   end
 end
